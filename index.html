@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+</head>
+<style>
+h1{
+    text-aline:center;
+    font-family:'courier New',Courier,monospace;
+}
+.main{
+    width:300px;
+    height: 150px;
+    background:rgb(135, 235, 185);
+}
+input{
+    border: 2px solid black;
+}
+form{
+    width: 220px;
+    height:20px;
+    
+}
+#input{
+    margin-top :30px;
+    margin-bottom: 50px;
+
+}
+input{
+    border:2px solid rgb(8, 8, 12);
+    padding: 4px;
+    border-radius: 4px;
+    outline:none;
+    }
+    input:focus{
+        border-color:blue;
+    }Zsaaaaaa
+</style>
+<body>
+    <center>
+        <div class="main">
+        <h1>Simple UI design that accepts only number</h1>
+    <form onsubmit="validate(); return false; " >
+    <input id="input" type="number"/>
+    <input type="submit" name="check" value="check" class="check"/>
+    <br/>
+    <br/>
+    <label id="message"></label>
+</form>
+</div>
+</center>
+<script>
+function validate(){
+    var input=document.getElementById("input");
+    var message=document.getElementById("message");
+    if (input.value==""){
+        message.innerHTML="INPUT CAN NOT BE EMPTY!";
+    }else if (input.value<0){
+        message.innerHTML="Enter a positive value";
+    } else if (input.value % 2==0 || input.value % 2==1){
+        let num=Number(input.value);
+        message.innerHTML="";
+
+        for(var i=0; i<3; i++){
+            num+=2;
+            message.innerHTML +=num + " ";
+        }
+    }
+    }
+
+    
+</script>
+</body>
+</html>
